@@ -1,4 +1,10 @@
-# coding: utf-8
+# -*- coding: UTF-8 -*-
+"""
+@Time : 2022/1/20 2:34 PM
+@Author : xiaoguangliang
+@File : plugins.py
+@Project : sentry-for-wxwork
+"""
 
 import json
 
@@ -60,7 +66,7 @@ class WxWorkPlugin(NotificationPlugin):
                 "content": u"## {title} \n\n > {message} \n\n [详细信息]({url})".format(
                     title=title,
                     message=event.title or event.message,
-                    url=u"{}events/{}/".format(group.get_absolute_url(), event.event_id),)
+                    url=u"{}events/{}/".format(group.get_absolute_url(), event.event_id), )
             }
         }
         requests.post(
@@ -68,3 +74,7 @@ class WxWorkPlugin(NotificationPlugin):
             headers={"Content-Type": "application/json"},
             data=json.dumps(data).encode("utf-8")
         )
+
+
+if __name__ == "__main__":
+    pass

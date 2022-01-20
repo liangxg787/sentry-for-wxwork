@@ -1,4 +1,10 @@
-#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+"""
+@Time : 2022/1/20 2:34 PM
+@Author : xiaoguangliang
+@File : setup.py
+@Project : sentry-for-wxwork
+"""
 from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
