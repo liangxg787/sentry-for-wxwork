@@ -19,6 +19,7 @@ WxWork_API = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={token}"
 
 class WxWorkPlugin(NotificationPlugin):
     """
+    继承sentry的消息插件，构建基于企微群机器人的报警插件
     Sentry plugin to send error counts to wxwork.
     """
     author = 'Ngenie'
@@ -39,16 +40,31 @@ class WxWorkPlugin(NotificationPlugin):
 
     def is_configured(self, project):
         """
-        Check if plugin is configured.
+        校验token
+        @param project:
+        @return:
         """
         return bool(self.get_option('access_token', project))
 
     def notify_users(self, group, event, *args, **kwargs):
+        """
+        给用户发消息
+        @param group:
+        @param event:
+        @param args:
+        @param kwargs:
+        @return:
+        """
         self.post_process(group, event, *args, **kwargs)
 
     def post_process(self, group, event, *args, **kwargs):
         """
-        Process error.
+        post请求企微群机器人
+        @param group:
+        @param event:
+        @param args:
+        @param kwargs:
+        @return:
         """
         if not self.is_configured(group.project):
             return

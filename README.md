@@ -24,6 +24,7 @@ docker-compose up -d
 ### 2.2.1 先在整个sentry的Settings里面找到WxWork，如下图所示
 ![找到Wxwork](images/Wxwork.png)
 ### 2.2.2 然后在可以在你所建的项目的Settings中找到 Legacy integrations, 在里面把WxWork打开
+![找到Legacy_ntegrations](images/Legacy_ntegrations.png)
 ### 2.2.3 然后刷新一下，可以在你所建的项目中，看到WxWork，接着配置上你的token即可，如下图所示。
 注意，这里的token，即为你在配置企微群机器人得到的url中的key的值。
 ![找到token](images/token.png)
