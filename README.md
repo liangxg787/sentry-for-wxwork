@@ -27,6 +27,8 @@ docker-compose up -d
 ![找到Legacy_ntegrations](images/Legacy_ntegrations.png)
 ### 2.2.3 然后刷新一下，可以在你所建的项目中，看到WxWork，接着配置上你的token即可，如下图所示。
 注意，这里的token，即为你在配置企微群机器人得到的url中的key的值。
+新的版本支持加入项目负责人的名字，方便在群聊中@相关负责人。在企微群聊机器人的key值后面添加，指定该项目的负责人，
+方便在群聊中@该负责人，格式为{key}_{name}
 ![找到token](images/token.png)
 
 # 3 FAQ
