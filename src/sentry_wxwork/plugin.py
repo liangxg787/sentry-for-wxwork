@@ -72,9 +72,26 @@ class WxWorkPlugin(NotificationPlugin):
         if group.is_ignored():
             return
 
-        access_token = self.get_option('access_token', group.project)
+        result = self.get_option('access_token', group.project)
+        # 支持在企微群聊机器人的key值后面添加，指定该项目的负责人，方便在群聊中@该负责人，格式为{key}_{name}
+        results = result.split('_')
+        name = ''
+        if len(results) == 1:
+            # 如果没有按照格式要求配置key，或者只配置了key没有配置名字，则默认配置的只有key
+            access_token = results[0]
+        else:
+            access_token, name = results
         send_url = WxWork_API.format(token=access_token)
         title = u'【%s】的项目异常' % event.project.slug
+
+        if name:
+            data = {
+                "msgtype": "text",
+                "text": {
+                    "content": f"@{name}",
+                }
+            }
+            self.post_request(send_url, data)
 
         data = {
             "msgtype": "markdown",
@@ -85,6 +102,10 @@ class WxWorkPlugin(NotificationPlugin):
                     url=u"{}events/{}/".format(group.get_absolute_url(), event.event_id), )
             }
         }
+        self.post_request(send_url, data)
+
+    @staticmethod
+    def post_request(send_url, data):
         requests.post(
             url=send_url,
             headers={"Content-Type": "application/json"},
