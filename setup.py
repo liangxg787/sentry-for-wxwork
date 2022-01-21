@@ -6,13 +6,14 @@
 @Project : sentry-for-wxwork
 """
 from setuptools import setup, find_packages
+from src.sentry_wxwork import VERSION
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
     name="sentry-for-wxwork",
-    version='1.0.0',
+    version=VERSION,
     author='Ngenie',
     author_email='hplxg@hotmail.com',
     url='https://github.com/liangxg787/sentry-for-wxwork',
