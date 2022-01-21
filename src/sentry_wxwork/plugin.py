@@ -79,8 +79,10 @@ class WxWorkPlugin(NotificationPlugin):
         if len(results) == 1:
             # 如果没有按照格式要求配置key，或者只配置了key没有配置名字，则默认配置的只有key
             access_token = results[0]
-        else:
+        elif len(results) == 2:
             access_token, name = results
+        else:
+            access_token = ''
         send_url = WxWork_API.format(token=access_token)
         title = u'【%s】的项目异常' % event.project.slug
 
