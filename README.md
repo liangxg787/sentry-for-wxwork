@@ -1,8 +1,7 @@
 <h1 align="center">Sentry-for-WxWork</h1>
 <div align="center">
 
-This project is a plugin designed specifically for enterprise WeChat group chat robots, mimicking <a href="https://github.com/FeSeason/sentry-10-dingding.git">sentry-10-dingding</a> for <a href="https://github.com/getsentry/sentry">sentry</a>, 
-for writing alarm messages. If you want to use a DingTalk robot as a tool for sentry alarms, you can use sentry-10-dingding.
+This project is a plugin designed specifically for enterprise WeChat group chat robots, mimicking <a href="https://github.com/FeSeason/sentry-10-dingding.git">sentry-10-dingding</a>, for <a href="https://github.com/getsentry/sentry">sentry</a> alarm messages. If you want to use a DingTalk robot as a tool for sentry alarms, you can use sentry-10-dingding.
 
 Languages： English | [中文](README_CN.md)
 </div>
